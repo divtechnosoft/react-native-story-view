@@ -59,9 +59,10 @@ const StoryView = (props: StoryViewProps) => {
               resizeMode="contain"
               paused={props.pause || loading}
               source={{
-                uri: convertToProxyURL({
-                  url: source?.url!,
-                }),
+                uri: source?.url
+                // uri: convertToProxyURL({
+                //   url: source?.url!,
+                // }),
               }}
               onEnd={props?.onVideoEnd}
               onError={(_error: any) => {
