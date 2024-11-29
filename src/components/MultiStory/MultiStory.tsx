@@ -24,34 +24,37 @@ const MultiStory = forwardRef<MultiStoryRef, MultiStoryProps>(
     const profileRef = useRef<FlatList>(null);
     const itemsRef = useRef<View[]>([]);
 
-      // Initialize viewedStories state
-  const [viewedStories, setViewedStories] = useState(() =>
-    Array.isArray(stories) && stories.length > 0
-      ? stories.map((storyGroup) =>
-          storyGroup?.stories.map((story: StoryType) => story?.isSeen || false)
-        )
-      : []
-  );
-
-  // const { current: viewedStories } = useRef(
-  //   Array(stories.length)
-  //     .fill(stories)
-  //     .map((row, index) =>
-  //       row?.[index]?.stories.map((item: StoryType) => item?.isSeen ?? false)
-  //     )
-  // );
-
-  // Update viewedStories when stories change
-  useEffect(() => {
-    setViewedStories((prevViewedStories) =>
-      stories.map((storyGroup, index) => {
-        const prevGroup = prevViewedStories[index] || [];
-        return storyGroup?.stories.map(
-          (story, storyIndex) => prevGroup[storyIndex] || story?.isSeen || false
-        );
-      })
+    // Initialize viewedStories state
+    const [viewedStories, setViewedStories] = useState(() =>
+      Array.isArray(stories) && stories.length > 0
+        ? stories.map(storyGroup =>
+            storyGroup?.stories.map(
+              (story: StoryType) => story?.isSeen || false
+            )
+          )
+        : []
     );
-  }, [stories]);
+
+    // const { current: viewedStories } = useRef(
+    //   Array(stories.length)
+    //     .fill(stories)
+    //     .map((row, index) =>
+    //       row?.[index]?.stories.map((item: StoryType) => item?.isSeen ?? false)
+    //     )
+    // );
+
+    // Update viewedStories when stories change
+    useEffect(() => {
+      setViewedStories(prevViewedStories =>
+        stories.map((storyGroup, index) => {
+          const prevGroup = prevViewedStories[index] || [];
+          return storyGroup?.stories.map(
+            (story, storyIndex) =>
+              prevGroup[storyIndex] || story?.isSeen || false
+          );
+        })
+      );
+    }, [stories]);
 
     const openStories = (index: number) => {
       itemsRef.current?.[index]?.measure(
@@ -65,8 +68,6 @@ const MultiStory = forwardRef<MultiStoryRef, MultiStoryProps>(
       setIsStoryViewShow(true);
       setPressedIndex(index);
     };
-
-
 
     useImperativeHandle(ref, () => ({
       close: _onClose,
