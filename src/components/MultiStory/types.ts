@@ -33,4 +33,6 @@ export type MultiStoryProps = MultiStoryMainProps | OverlayViewMultiStoryProps;
 
 export interface MultiStoryRef {
   close: () => void;
+  pause: (pauseState: boolean) => void;
+  setMuted: (muteState: boolean) => void;
 }
