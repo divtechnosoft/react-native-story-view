@@ -11,7 +11,7 @@ import { MultiStoryContainer } from '../MultiStoryContainer';
 import { StoryAvatar } from '../StoryAvatar';
 import type { StoryType } from '../StoryView';
 import type { MultiStoryProps, MultiStoryRef } from './types';
-import type { PointerType } from '../MultiStoryContainer/types';
+import type { PointerType, ListItemRef } from '../MultiStoryContainer/types';
 
 const MultiStory = forwardRef<MultiStoryRef, MultiStoryProps>(
   ({ stories, transitionMode, avatarProps, ...props }, ref) => {
@@ -23,7 +23,7 @@ const MultiStory = forwardRef<MultiStoryRef, MultiStoryProps>(
     });
     const profileRef = useRef<FlatList>(null);
     const itemsRef = useRef<View[]>([]);
-    const multiStoryContainerRef = useRef<MultiStoryRef>(null);
+    const multiStoryContainerRef = useRef<ListItemRef>(null);
 
     // Initialize viewedStories state
     const [viewedStories, setViewedStories] = useState(() =>
@@ -78,6 +78,11 @@ const MultiStory = forwardRef<MultiStoryRef, MultiStoryProps>(
       setMuted: (muteState: boolean) => {
         multiStoryContainerRef.current?.setMuted(muteState);
       },
+      handleLongPress: (visibility: boolean) => {
+        multiStoryContainerRef.current?.handleLongPress(visibility);
+      },
+      onScrollBegin: () => {},
+      onScrollEnd: () => {},
     }));
 
     const _onClose = () => {
@@ -130,6 +135,7 @@ const MultiStory = forwardRef<MultiStoryRef, MultiStoryProps>(
         />
         {isStoryViewVisible && (
           <MultiStoryContainer
+            ref={multiStoryContainerRef}
             visible={isStoryViewVisible}
             pointers={pointers}
             onComplete={_onClose}
