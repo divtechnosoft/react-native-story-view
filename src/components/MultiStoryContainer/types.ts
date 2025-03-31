@@ -60,11 +60,11 @@ export interface ListItemProps {
 }
 
 export interface ListItemRef {
-  onScrollBegin: () => void;
-  onScrollEnd: () => void;
   handleLongPress: (visibility: boolean) => void;
   pause: (pauseState: boolean) => void;
   setMuted: (muteState: boolean) => void;
+  onScrollBegin: () => void;
+  onScrollEnd: () => void;
 }
 
 export interface DraggableGestureProps {
@@ -83,9 +83,3 @@ export type ViewableItemsRef = {
 export type ScrollValue = SharedValue<number>;
 
 export type PointerType = { pageX: number; pageY: number };
-
-export interface MultiStoryContainerRef {
-  pause: (pauseState: boolean) => void;
-  setMuted: (muteState: boolean) => void;
-  handleLongPress: (visibility: boolean) => void;
-}

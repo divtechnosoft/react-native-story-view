@@ -24,7 +24,6 @@ import type {
   ListItemRef,
   MultiStoryContainerProps,
   MultiStoryListItemProps,
-  MultiStoryContainerRef,
 } from './types';
 
 /**
@@ -73,9 +72,9 @@ const MultiStoryListItem = forwardRef<ListItemRef, MultiStoryListItemProps>(
     );
 
     useImperativeHandle(ref, () => ({
-      pause: (pauseState: boolean) => storyRef.current?.pause(pauseState),
       handleLongPress: (visibility: boolean) =>
         storyRef.current?.handleLongPress(visibility),
+      pause: (pauseState: boolean) => storyRef.current?.pause(pauseState),
       setMuted: (muteState: boolean) => {
         storyRef.current?.setMuted(muteState);
       },
@@ -91,7 +90,7 @@ const MultiStoryListItem = forwardRef<ListItemRef, MultiStoryListItemProps>(
           {storyIndex === index || isTransitionActive ? (
             <StoryContainer
               visible={true}
-              extended={false}
+              extended={true}
               key={index + item?.id}
               ref={storyRef}
               userStories={item}
@@ -126,10 +125,7 @@ const MultiStoryListItem = forwardRef<ListItemRef, MultiStoryListItemProps>(
   }
 );
 
-const MultiStoryContainer = forwardRef<
-  MultiStoryContainerRef,
-  MultiStoryContainerProps
->(
+const MultiStoryContainer = forwardRef<ListItemRef, MultiStoryContainerProps>(
   (
     {
       stories,
@@ -166,6 +162,8 @@ const MultiStoryContainer = forwardRef<
       handleLongPress: (visibility: boolean) => {
         itemsRef.current[storyIndexRef.current]?.handleLongPress(visibility);
       },
+      onScrollBegin: () => {},
+      onScrollEnd: () => {},
     }));
 
     const {
