@@ -187,13 +187,13 @@ const useStoryContainer = (
   };
 
   const onStoryPressHold = () => {
-    if (storyMode === StoryMode.MultiStory) return;
+    // if (storyMode === StoryMode.MultiStory) return;
     setVisibleElements(false);
     setPause(true);
   };
 
   const onStoryPressRelease = () => {
-    if (storyMode === StoryMode.MultiStory) return;
+    // if (storyMode === StoryMode.MultiStory) return;
     if (isPause && !visibleElements) {
       setVisibleElements(true);
       setPause(false);

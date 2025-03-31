@@ -23,6 +23,7 @@ const MultiStory = forwardRef<MultiStoryRef, MultiStoryProps>(
     });
     const profileRef = useRef<FlatList>(null);
     const itemsRef = useRef<View[]>([]);
+    const multiStoryContainerRef = useRef<MultiStoryRef>(null);
 
     // Initialize viewedStories state
     const [viewedStories, setViewedStories] = useState(() =>
@@ -71,6 +72,12 @@ const MultiStory = forwardRef<MultiStoryRef, MultiStoryProps>(
 
     useImperativeHandle(ref, () => ({
       close: _onClose,
+      pause: (pauseState: boolean) => {
+        multiStoryContainerRef.current?.pause(pauseState);
+      },
+      setMuted: (muteState: boolean) => {
+        multiStoryContainerRef.current?.setMuted(muteState);
+      },
     }));
 
     const _onClose = () => {

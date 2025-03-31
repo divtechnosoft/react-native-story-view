@@ -57,6 +57,7 @@ const StoryView = (props: StoryViewProps) => {
             <Video
               ref={videoRef}
               resizeMode="contain"
+              muted={props.isMuted}
               paused={props.pause || loading}
               source={{
                 uri: source?.url,

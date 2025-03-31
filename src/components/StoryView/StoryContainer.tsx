@@ -79,6 +79,7 @@ const StoryContainer = forwardRef<StoryRef, StoryContainerProps>(
     } = useStoryContainer(props, viewedStories);
 
     const viewRef = useRef<View>(null);
+    const [isMuted, setIsMuted] = useState(false);
 
     useImperativeHandle(ref, () => ({
       pause: (pause: boolean) => {
@@ -92,7 +93,9 @@ const StoryContainer = forwardRef<StoryRef, StoryContainerProps>(
           setPause(visibility);
         }
       },
-
+      setMuted: (muteState: boolean) => {
+        setIsMuted(muteState);
+      },
       viewedStories: viewedStories.current,
     }));
 
@@ -175,6 +178,7 @@ const StoryContainer = forwardRef<StoryRef, StoryContainerProps>(
                   videoProps={props?.videoProps}
                   sourceIndicatorProps={props?.sourceIndicatorProps}
                   showSourceIndicator={props?.showSourceIndicator ?? true}
+                  isMuted={isMuted}
                 />
               </TouchableOpacity>
               {enableProgress && (
