@@ -1,3 +1,4 @@
+import { JSX } from 'react';
 import type { RefObject } from 'react';
 import type {
   ActivityIndicatorProps,

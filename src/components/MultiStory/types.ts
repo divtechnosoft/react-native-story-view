@@ -1,3 +1,4 @@
+import { JSX } from 'react';
 import type { FlatListProps } from 'react-native';
 import type { TransitionMode, ListItemRef } from '../MultiStoryContainer/types';
 import type { StoryAvatarStyleProps } from '../StoryAvatar/types';
