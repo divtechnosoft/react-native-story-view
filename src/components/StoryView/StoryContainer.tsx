@@ -160,7 +160,7 @@ const StoryContainer = forwardRef<StoryRef, StoryContainerProps>(
                 )}
 
                 <StoryView
-                  viewRef={viewRef}
+                  viewRef={viewRef as React.RefObject<View>}
                   duration={duration}
                   onVideoLoaded={onVideoLoaded}
                   onImageLoaded={onImageLoaded}
