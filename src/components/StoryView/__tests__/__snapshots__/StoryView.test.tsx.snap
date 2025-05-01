@@ -85,10 +85,9 @@ exports[`StoryContainer component Match Snapshot 1`] = `
               style={
                 Array [
                   Object {
-                    "alignSelf": "center",
-                    "height": "100%",
-                    "paddingBottom": 6,
-                    "width": 750,
+                    "alignItems": "center",
+                    "backgroundColor": "#000",
+                    "justifyContent": "flex-start",
                   },
                   Object {
                     "height": 1334,
@@ -97,51 +96,69 @@ exports[`StoryContainer component Match Snapshot 1`] = `
                 ]
               }
             >
-              <Video
-                bufferConfig={
-                  Object {
-                    "bufferForPlaybackAfterRebufferMs": 60000,
-                    "bufferForPlaybackMs": 60000,
-                    "minBufferMs": 60000,
-                  }
-                }
-                onBuffer={[Function]}
-                onEnd={[Function]}
-                onError={[Function]}
-                onLoad={[Function]}
-                onLoadStart={[Function]}
-                onProgress={[Function]}
-                onReadyForDisplay={[Function]}
-                paused={true}
-                resizeMode="contain"
-                source={
-                  Object {
-                    "uri": undefined,
-                  }
-                }
+              <View
                 style={
-                  Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 4,
-                    "flex": 1,
-                    "overflow": "hidden",
-                  }
+                  Array [
+                    Object {
+                      "height": 1333.3333333333333,
+                      "width": 750,
+                    },
+                    Object {
+                      "backgroundColor": "#101010",
+                      "borderRadius": 10,
+                      "marginTop": 35,
+                      "overflow": "hidden",
+                    },
+                  ]
                 }
-              />
-              <ActivityIndicator
-                animating={true}
-                color="#575899"
-                pointerEvents="none"
-                size="small"
-                style={
-                  Object {
-                    "flex": 1,
-                    "left": "45%",
-                    "position": "absolute",
-                    "top": "50%",
+              >
+                <Video
+                  bufferConfig={
+                    Object {
+                      "bufferForPlaybackAfterRebufferMs": 10000,
+                      "bufferForPlaybackMs": 10000,
+                      "minBufferMs": 10000,
+                    }
                   }
-                }
-              />
+                  muted={false}
+                  onBuffer={[Function]}
+                  onEnd={[Function]}
+                  onError={[Function]}
+                  onLoad={[Function]}
+                  onLoadStart={[Function]}
+                  onProgress={[Function]}
+                  onReadyForDisplay={[Function]}
+                  paused={true}
+                  resizeMode="contain"
+                  source={
+                    Object {
+                      "uri": undefined,
+                    }
+                  }
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "borderRadius": 10,
+                      "height": "100%",
+                      "width": "100%",
+                    }
+                  }
+                />
+                <ActivityIndicator
+                  animating={true}
+                  color="#ffff"
+                  pointerEvents="none"
+                  size="small"
+                  style={
+                    Object {
+                      "flex": 1,
+                      "left": "48%",
+                      "position": "absolute",
+                      "top": "50%",
+                    }
+                  }
+                />
+              </View>
             </View>
           </View>
           <View
@@ -186,10 +203,9 @@ exports[`StoryView component Match Snapshot 1`] = `
   style={
     Array [
       Object {
-        "alignSelf": "center",
-        "height": "100%",
-        "paddingBottom": 6,
-        "width": 750,
+        "alignItems": "center",
+        "backgroundColor": "#000",
+        "justifyContent": "flex-start",
       },
       Object {
         "height": 1334,
@@ -198,36 +214,53 @@ exports[`StoryView component Match Snapshot 1`] = `
     ]
   }
 >
-  <Video
-    bufferConfig={
-      Object {
-        "bufferForPlaybackAfterRebufferMs": 60000,
-        "bufferForPlaybackMs": 60000,
-        "minBufferMs": 60000,
-      }
-    }
-    onBuffer={[Function]}
-    onError={[Function]}
-    onLoad={[Function]}
-    onLoadStart={[Function]}
-    onProgress={[Function]}
-    onReadyForDisplay={[Function]}
-    paused={true}
-    resizeMode="contain"
-    source={
-      Object {
-        "uri": undefined,
-      }
-    }
+  <View
     style={
-      Object {
-        "backgroundColor": "transparent",
-        "borderRadius": 4,
-        "flex": 1,
-        "overflow": "hidden",
-      }
+      Array [
+        Object {
+          "height": 1333.3333333333333,
+          "width": 750,
+        },
+        Object {
+          "backgroundColor": "#101010",
+          "borderRadius": 10,
+          "marginTop": 35,
+          "overflow": "hidden",
+        },
+      ]
     }
-  />
+  >
+    <Video
+      bufferConfig={
+        Object {
+          "bufferForPlaybackAfterRebufferMs": 10000,
+          "bufferForPlaybackMs": 10000,
+          "minBufferMs": 10000,
+        }
+      }
+      onBuffer={[Function]}
+      onError={[Function]}
+      onLoad={[Function]}
+      onLoadStart={[Function]}
+      onProgress={[Function]}
+      onReadyForDisplay={[Function]}
+      paused={true}
+      resizeMode="contain"
+      source={
+        Object {
+          "uri": undefined,
+        }
+      }
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRadius": 10,
+          "height": "100%",
+          "width": "100%",
+        }
+      }
+    />
+  </View>
 </View>
 `;
 
