@@ -139,6 +139,7 @@ const userStories = [
     {
       id: 1, //unique id (required)
       username: 'Alan', //user name on header
+      isOwner: true, // to show the plus button to add new story
       title: 'Albums', //title below username
       profile: 'https://sosugary.com/wp-content/uploads/2022/01/TheWeeknd_001.jpg', //user profile picture
       stories: [
