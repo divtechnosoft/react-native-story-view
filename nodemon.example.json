@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext": "ts, tsx",
+  "exec": "bun run build && xcopy lib \"<linked project's escaped path>\\node_modules\\react-native-story-view\\lib\" /E /I /Y && copy package.json \"<linked project's escaped path>\\node_modules\\react-native-story-view\\package.json\" /Y",
+  "signal": "SIGTERM"
+}
