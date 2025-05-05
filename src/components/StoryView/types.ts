@@ -232,6 +232,7 @@ export type StoryType = {
 };
 
 export type StoriesType = {
+  isOwner?: boolean;
   username?: string;
   profile?: string;
   title?: string;

@@ -18,6 +18,7 @@ export interface MultiStoryBaseProps extends Partial<FlatListProps<any>> {
   transitionMode?: TransitionMode;
   renderOverlayView?: (item: StoryType) => JSX.Element;
   overlayViewPostion?: 'top' | 'bottom' | 'middle';
+  onAddButtonPress?: () => void;
 }
 
 export interface OverlayViewMultiStoryProps extends MultiStoryBaseProps {
