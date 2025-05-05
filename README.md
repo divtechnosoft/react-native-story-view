@@ -440,6 +440,7 @@ Pass any custom view in story view. It will be rendered on top of story view as 
 ```
 
 ---
+
 ### Custom Overlay View
 
   <table>
@@ -458,7 +459,7 @@ Pass any custom overlay view in the story view, which will be visible when the s
       style={{
         padding: 10,
         backgroundColor: 'gray',
-        borderRadius: 10
+        borderRadius: 10,
       }}
       onPress={() => {
         if (item.link) {
@@ -479,6 +480,7 @@ Pass any custom overlay view in the story view, which will be visible when the s
 [{
   id: number;
   username: string;
+  isOwner: boolean;
   title: string;
   profile: string;
   stories:Array<Story>[
@@ -522,8 +524,9 @@ Pass any custom overlay view in the story view, which will be visible when the s
 > | onChangePosition    |        null         | (progressIndex, storyIndex) => {}               | Callback when progress index changes                                                                                                                                 |
 > | transitionMode      | TransitionMode.Cube | TransitionMode: {Default, Cube, Scale}          | To customize user story transition, (TransitionMode.default : no transition, Transition.scale : zoomIn/zoomOut transition, Transition.Cube: 3D cube transition) cube |
 > | onComplete          |        null         | (viewedStories?: Array<boolean[]>) => void      | Callback when stories closed or completes. `viewedStories` contains multi array of boolean whether story is seen or not                                              |
-> | renderOverlayView          |        null         | (item?: StoryType) => JSX.Element      | The callback for the overlay view is triggered only when the story item has showOverlay property set to true                                             |
-> | overlayViewPostion          |        bottom         | string      | Position of overlay view (top, middle, bottom)                                              |
+> | renderOverlayView   |        null         | (item?: StoryType) => JSX.Element               | The callback for the overlay view is triggered only when the story item has showOverlay property set to true                                                         |
+> | overlayViewPostion  |       bottom        | string                                          | Position of overlay view (top, middle, bottom)                                                                                                                       |
+> | `onAddButtonPress`  |      undefined      | Function                                        | Callback function triggered when the 'Add' button on an avatar (where `isOwner` is true) is pressed. (New!)                                                          |
 > | `props`             |          -          | FlatListProps                                   | Pass any `FlatList` props to customize horizontal user list                                                                                                          |
 
 ---
@@ -559,8 +562,8 @@ Pass any custom overlay view in the story view, which will be visible when the s
 > | onChangePosition    |             null             | (progressIndex, userIndex) => {}       | Callback when progress index changes                                                                                                                                 |
 > | transitionMode      |     TransitionMode.Cube      | TransitionMode: {Default, Cube, Scale} | To customize user story transition, (TransitionMode.default : no transition, Transition.scale : zoomIn/zoomOut transition, Transition.Cube: 3D cube transition) cube |
 > | onComplete          |             null             | () => {}                               | Callback when stories closed or complete                                                                                                                             |
-> | renderOverlayView          |        null         | (item?: StoryType) => JSX.Element      | The callback for the overlay view is triggered only when the story item has showOverlay property set to true                                             |
-> | overlayViewPostion          |        bottom         | string      | Position of overlay view (top, middle, bottom)                                              |
+> | renderOverlayView   |             null             | (item?: StoryType) => JSX.Element      | The callback for the overlay view is triggered only when the story item has showOverlay property set to true                                                         |
+> | overlayViewPostion  |            bottom            | string                                 | Position of overlay view (top, middle, bottom)                                                                                                                       |
 > | `props`             |              -               | StoryContainerProps                    | Pass any `StoryContainerProps` props to customize story                                                                                                              |
 > | pointers            | { pageX: 0,<br /> pageY: 0 } | PointerType                            | Pointers will be used internally for modal opening and closing positions, You can pass profile avatar's position offsets here.                                       |
 
