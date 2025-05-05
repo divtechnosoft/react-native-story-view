@@ -1,8 +1,14 @@
+// libs
 import React, { forwardRef } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Animated from 'react-native-reanimated';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+
+// hooks
 import useCircleAnimation from './hooks/useCircleAnimation';
+
+// mics
 import styles from './styles';
+import { Icons } from '../../assets';
 import type { StoryAvatarProps } from './types';
 
 const StoryAvatar = forwardRef<View, StoryAvatarProps>(
@@ -21,6 +27,8 @@ const StoryAvatar = forwardRef<View, StoryAvatarProps>(
       userNameProps,
       rootProps,
       containerStyle,
+      showAddButton,
+      onAddButtonPress,
     }: StoryAvatarProps,
     ref
   ) => {
@@ -55,6 +63,14 @@ const StoryAvatar = forwardRef<View, StoryAvatarProps>(
               style={[_userImageStyle, avatarAnimatedStyle]}
               {...userImageProps}
             />
+            {showAddButton && onAddButtonPress && (
+              <Pressable
+                style={styles.addButton}
+                hitSlop={5}
+                onPress={onAddButtonPress}>
+                <Animated.Image source={Icons.add} style={styles.addIcon} />
+              </Pressable>
+            )}
           </View>
           <Text style={_userNameStyle} {...userNameProps}>
             {item?.username}

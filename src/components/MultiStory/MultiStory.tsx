@@ -14,7 +14,10 @@ import type { MultiStoryProps, MultiStoryRef } from './types';
 import type { PointerType, ListItemRef } from '../MultiStoryContainer/types';
 
 const MultiStory = forwardRef<MultiStoryRef, MultiStoryProps>(
-  ({ stories, transitionMode, avatarProps, ...props }, ref) => {
+  (
+    { stories, transitionMode, avatarProps, onAddButtonPress, ...props },
+    ref
+  ) => {
     const [isStoryViewVisible, setIsStoryViewShow] = useState<boolean>(false);
     const [pressedIndex, setPressedIndex] = useState<number>(-1);
     const [pointers, setPointers] = useState<PointerType>({
@@ -127,6 +130,8 @@ const MultiStory = forwardRef<MultiStoryRef, MultiStoryProps>(
                 pressedIndex,
                 openStories,
                 viewedStories,
+                showAddButton: item?.isOwner,
+                onAddButtonPress,
                 ...avatarProps,
               }}
             />

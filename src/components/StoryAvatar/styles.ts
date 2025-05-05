@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
   imageContainer: {
     height: moderateScale(70),
     width: moderateScale(70),
-    overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: moderateScale(35),
@@ -27,6 +26,22 @@ const styles = StyleSheet.create({
     marginTop: moderateScale(6),
     color: Colors.white,
     fontWeight: '500',
+  },
+  addButton: {
+    position: 'absolute',
+    bottom: 0,
+    right: 2,
+
+    backgroundColor: 'white',
+
+    borderColor: 'white',
+    borderWidth: 2,
+    borderRadius: 20,
+  },
+
+  addIcon: {
+    width: 20,
+    height: 20,
   },
 });
 
