@@ -62,7 +62,7 @@ buck-out/
 /vendor/bundle/
 
 # generated
-lib
+# lib
 
 # local script to sync local changes to project
 nodemon.json
