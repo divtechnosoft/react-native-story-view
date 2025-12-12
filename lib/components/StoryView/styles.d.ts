@@ -16,7 +16,6 @@ declare const styles: {
         alignItems: "center";
     };
     storyMedia: {
-        marginTop: number;
         backgroundColor: string;
         borderRadius: number;
         overflow: "hidden";
@@ -95,6 +94,8 @@ declare const styles: {
         flex: number;
         margin: number;
         borderRadius: number;
+        borderWidth: number;
+        borderColor: string;
         shadowColor: string;
         shadowOffset: {
             width: number;
@@ -137,7 +138,6 @@ declare const styles: {
     userView: {
         flexDirection: "row";
         position: "absolute";
-        top: number;
         width: string;
         alignItems: "center";
     };

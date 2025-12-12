@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   storyMedia: {
-    marginTop: 35,
     backgroundColor: '#101010',
     borderRadius: 10,
     overflow: 'hidden',
@@ -94,7 +93,7 @@ const styles = StyleSheet.create({
   progressBarArray: {
     flexDirection: 'row',
     position: 'absolute',
-    top: verticalScale(10),
+    top: verticalScale(-20),
     width: '98%',
     height: verticalScale(10),
     justifyContent: 'space-between',
@@ -104,14 +103,15 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: moderateScale(2),
     borderRadius: verticalScale(10),
-    // shadow
-    shadowColor: '#000000ab',
+    borderWidth: 0.2,
+    borderColor: "#9f9f9fff",
+    shadowColor: '#000000e4',
     shadowOffset: {
-      width: 0,
-      height: 2,
+      width: 5,
+      height: 10,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 5,
+    shadowOpacity: 1,
+    shadowRadius:2,
     elevation: 5,
   },
   currentBarContainer: {
@@ -148,7 +148,6 @@ const styles = StyleSheet.create({
   userView: {
     flexDirection: 'row',
     position: 'absolute',
-    top: verticalScale(30),
     width: '98%',
     alignItems: 'center',
   },
@@ -157,7 +156,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     marginLeft: scale(12),
     color: 'white',
-    textShadowColor: '#00000087',
+    textShadowColor: '#000000b5',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 6,
   },
