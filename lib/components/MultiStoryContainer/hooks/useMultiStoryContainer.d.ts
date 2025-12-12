@@ -2,7 +2,7 @@ import type { MultiStoryContainerProps, PointerType, ScrollValue, ViewConfig } f
 declare const useMultiStoryContainer: (_flatListRef: any, { userStoryIndex, backgroundColor }: Partial<MultiStoryContainerProps>, handleLongPress: (visibility: boolean) => void, onComplete?: () => void, pointers?: PointerType, visible?: boolean) => {
     scrollX: ScrollValue;
     onViewRef: ({ viewableItems }: ViewConfig) => void;
-    viewabilityConfig: import("react").MutableRefObject<{
+    viewabilityConfig: import("react").RefObject<{
         itemVisiblePercentThreshold: number;
         waitForInteraction: boolean;
     }>;
@@ -38,8 +38,8 @@ declare const useMultiStoryContainer: (_flatListRef: any, { userStoryIndex, back
     isKeyboardVisible: boolean;
     setIsScrollActive: import("react").Dispatch<import("react").SetStateAction<boolean>>;
     updateStoryIndex: () => void;
-    isScrollActiveRef: import("react").MutableRefObject<boolean>;
-    storyIndexRef: import("react").MutableRefObject<number>;
+    isScrollActiveRef: import("react").RefObject<boolean>;
+    storyIndexRef: import("react").RefObject<number>;
     animationModalStyle: {
         transform: ({
             translateY: number;
