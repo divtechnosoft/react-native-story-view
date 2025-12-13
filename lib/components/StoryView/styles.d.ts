@@ -94,8 +94,6 @@ declare const styles: {
         flex: number;
         margin: number;
         borderRadius: number;
-        borderWidth: number;
-        borderColor: string;
         shadowColor: string;
         shadowOffset: {
             width: number;

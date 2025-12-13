@@ -103,15 +103,13 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: moderateScale(2),
     borderRadius: verticalScale(10),
-    borderWidth: 0.2,
-    borderColor: "#9f9f9fff",
     shadowColor: '#000000e4',
     shadowOffset: {
-      width: 5,
-      height: 10,
+      width: 1,
+      height: 0,
     },
     shadowOpacity: 1,
-    shadowRadius:2,
+    shadowRadius: 4,
     elevation: 5,
   },
   currentBarContainer: {

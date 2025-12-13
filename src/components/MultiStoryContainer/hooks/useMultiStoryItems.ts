@@ -49,7 +49,7 @@ const useMultiStoryItems = (
   const width = Metrics.windowWidth;
   const perspective = width;
   const offset = index * width;
-  const ratio = Metrics.isIOS ? 2 : 1;
+  const ratio = 1;
   const inputRange = [offset - width, offset + width];
   const angle = Math.atan(perspective / (width / ratio));
 
