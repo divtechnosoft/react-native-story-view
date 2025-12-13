@@ -197,14 +197,17 @@ export interface UserProps {
   imageArrow?: ImageSourcePropType | undefined;
   onImageClick?: Function | undefined;
   onClosePress?: Function | undefined;
+  userTime?: string | undefined;
   userImageProps?: ImageProps | undefined;
   closeIconProps?: ImageProps | undefined;
   userNameProps?: TextProps | undefined;
   userMessageProps?: TextProps | undefined;
+  userTimeProps?: TextProps | undefined;
   userImageStyle?: ImageStyle;
   rootStyle?: ViewStyle;
   userNameStyle?: TextStyle;
   userMessageStyle?: TextStyle;
+  userTimeStyle?: TextStyle;
   closeIconStyle?: ImageStyle;
   customCloseButton?: any;
 }

@@ -21,6 +21,9 @@ export default memo(function ProfileHeader({
   userNameProps,
   userImageProps,
   closeIconProps,
+  userTime,
+  userTimeStyle,
+  userTimeProps,
   ...rest
 }: UserProps) {
   const _containerStyle = StyleSheet.flatten([
@@ -62,6 +65,11 @@ export default memo(function ProfileHeader({
           <Text style={_userNameStyle} {...userNameProps}>
             {userName}
           </Text>
+          {!!userTime && (
+            <Text style={StyleSheet.flatten([styles.time, userTimeStyle])} {...userTimeProps}>
+              {userTime}
+            </Text>
+          )}
         </View>
         {!!userMessage && (
           <Text style={_userMessageStyle} {...userMessageProps}>

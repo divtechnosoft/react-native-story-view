@@ -36,14 +36,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: scale(8),
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.7,
-    shadowRadius: 3,
-    elevation: 5,
   },
   ImageStyle: {
     padding: moderateScale(10),

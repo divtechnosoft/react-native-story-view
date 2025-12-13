@@ -103,14 +103,6 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: moderateScale(2),
     borderRadius: verticalScale(10),
-    shadowColor: '#000000e4',
-    shadowOffset: {
-      width: 1,
-      height: 0,
-    },
-    shadowOpacity: 0.5,
-    shadowRadius: 4,
-    elevation: 5,
   },
   currentBarContainer: {
     position: 'absolute',
@@ -154,9 +146,12 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     marginLeft: scale(12),
     color: 'white',
-    textShadowColor: '#000000b5',
-    textShadowOffset: { width: 0, height: 1 },
-    textShadowRadius: 6,
+  },
+  time: {
+    fontSize: moderateScale(14),
+    fontWeight: '400',
+    marginLeft: scale(8),
+    color: '#DDDDDD',
   },
   message: {
     fontSize: moderateScale(12),

@@ -94,14 +94,6 @@ declare const styles: {
         flex: number;
         margin: number;
         borderRadius: number;
-        shadowColor: string;
-        shadowOffset: {
-            width: number;
-            height: number;
-        };
-        shadowOpacity: number;
-        shadowRadius: number;
-        elevation: number;
     };
     currentBarContainer: {
         position: "absolute";
@@ -144,12 +136,12 @@ declare const styles: {
         fontWeight: "500";
         marginLeft: number;
         color: string;
-        textShadowColor: string;
-        textShadowOffset: {
-            width: number;
-            height: number;
-        };
-        textShadowRadius: number;
+    };
+    time: {
+        fontSize: number;
+        fontWeight: "400";
+        marginLeft: number;
+        color: string;
     };
     message: {
         fontSize: number;

@@ -32,14 +32,6 @@ declare const styles: {
         justifyContent: "center";
         alignItems: "center";
         marginHorizontal: number;
-        shadowColor: string;
-        shadowOffset: {
-            width: number;
-            height: number;
-        };
-        shadowOpacity: number;
-        shadowRadius: number;
-        elevation: number;
     };
     ImageStyle: {
         padding: number;
