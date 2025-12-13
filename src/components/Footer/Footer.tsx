@@ -29,6 +29,7 @@ const Footer = ({
   containerViewProps,
   customInput,
   customSendButton,
+  customInputSendButton,
   ...rest
 }: FooterProps) => {
   const isKeyboardVisible = useKeyboardListener();
@@ -63,9 +64,11 @@ const Footer = ({
           </>
         {isKeyboardVisible && shouldShowTextInputSend && (
           <TouchableOpacity onPress={handleSendTextPress}>
-            <Text style={_sendTextStyle} {...sendTextProps}>
-              {sendText ?? Strings.send}
-            </Text>
+            {customInputSendButton ?? (
+              <Text style={_sendTextStyle} {...sendTextProps}>
+                {sendText ?? Strings.send}
+              </Text>
+            )}
           </TouchableOpacity>
         )}
       </View>

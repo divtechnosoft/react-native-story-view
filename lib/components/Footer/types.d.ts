@@ -9,6 +9,7 @@ export declare type FooterProps = TextInputProps & {
     shouldShowTextInputSend?: boolean;
     customInput?: React.ReactNode;
     customSendButton?: React.ReactNode;
+    customInputSendButton?: React.ReactNode;
     shouldShowSendImage?: boolean;
     sendTextStyle?: TextStyle;
     sendIconStyle?: ImageStyle;
