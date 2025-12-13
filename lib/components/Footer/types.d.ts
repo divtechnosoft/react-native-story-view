@@ -1,5 +1,5 @@
 import type React from 'react';
-import type { ImageProps, ImageStyle, StyleProp, TextInput, TextInputProps, TextProps, TextStyle, ViewProps, ViewStyle } from 'react-native';
+import type { ImageProps, ImageStyle, StyleProp, TextInputProps, TextProps, TextStyle, ViewProps, ViewStyle } from 'react-native';
 export declare type FooterComponentProps = React.ReactElement<FooterProps>;
 export declare type FooterProps = TextInputProps & {
     label?: string;
@@ -7,7 +7,8 @@ export declare type FooterProps = TextInputProps & {
     sendTextProps?: TextProps;
     containerViewProps?: ViewProps;
     shouldShowTextInputSend?: boolean;
-    customInput?: TextInput | null;
+    customInput?: React.ReactNode;
+    customSendButton?: React.ReactNode;
     shouldShowSendImage?: boolean;
     sendTextStyle?: TextStyle;
     sendIconStyle?: ImageStyle;

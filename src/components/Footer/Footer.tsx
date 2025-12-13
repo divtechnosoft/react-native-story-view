@@ -28,6 +28,7 @@ const Footer = ({
   sendTextProps,
   containerViewProps,
   customInput,
+  customSendButton,
   ...rest
 }: FooterProps) => {
   const isKeyboardVisible = useKeyboardListener();
@@ -59,7 +60,7 @@ const Footer = ({
               {...rest}
             />
           )}
-        </>
+          </>
         {isKeyboardVisible && shouldShowTextInputSend && (
           <TouchableOpacity onPress={handleSendTextPress}>
             <Text style={_sendTextStyle} {...sendTextProps}>
@@ -69,12 +70,16 @@ const Footer = ({
         )}
       </View>
       {!isKeyboardVisible && shouldShowSendImage && (
-        <TouchableOpacity onPress={onIconPress} testID="footerIcon">
-          <Image
-            source={Icons.send}
-            style={_sendIconStyle}
-            {...sendIconProps}
-          />
+        <TouchableOpacity onPress={onIconPress} testID="footerIcon" style={{ marginLeft: 8 }}>
+          {customSendButton ? (
+            customSendButton
+          ) : (
+            <Image
+              source={Icons.send}
+              style={_sendIconStyle}
+              {...sendIconProps}
+            />
+          )}
         </TouchableOpacity>
       )}
     </View>

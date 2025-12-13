@@ -3,7 +3,6 @@ import type {
   ImageProps,
   ImageStyle,
   StyleProp,
-  TextInput,
   TextInputProps,
   TextProps,
   TextStyle,
@@ -19,7 +18,8 @@ export type FooterProps = TextInputProps & {
   sendTextProps?: TextProps;
   containerViewProps?: ViewProps;
   shouldShowTextInputSend?: boolean;
-  customInput?: TextInput | null;
+  customInput?: React.ReactNode;
+  customSendButton?: React.ReactNode;
   shouldShowSendImage?: boolean;
   sendTextStyle?: TextStyle;
   sendIconStyle?: ImageStyle;
