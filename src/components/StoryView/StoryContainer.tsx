@@ -7,13 +7,13 @@ import React, {
   useState,
 } from 'react';
 import {
-  KeyboardAvoidingView,
   SafeAreaView,
   StyleProp,
   TouchableOpacity,
   View,
   ViewStyle,
 } from 'react-native';
+import { KeyboardAvoidingView } from 'react-native-keyboard-controller';
 import Animated from 'react-native-reanimated';
 import { Metrics } from '../../theme';
 import ProgressView from './ProgressView';
@@ -24,7 +24,6 @@ import {
   ClickPosition,
   OverlayPositions,
   StoryContainerProps,
-  StoryMode,
   StoryRef,
 } from './types';
 
@@ -105,17 +104,7 @@ const StoryContainer = forwardRef<StoryRef, StoryContainerProps>(
       );
     }, [progressIndex, props.stories, setDuration, setLoaded]);
 
-    const storyMode: StoryMode =
-      props?.userStoryIndex !== undefined
-        ? StoryMode.MultiStory
-        : StoryMode.SingleStory;
-    const [viewHeight, setViewHeight] = useState<number>(0);
-    const bottom =
-      storyMode === StoryMode.SingleStory
-        ? isKeyboardVisible
-          ? viewHeight
-          : 0
-        : 0;
+    const bottom = 0;
 
     const overlayViewStyles = useMemo(() => {
       let style: StyleProp<ViewStyle> = [styles.overlayViewStyle];
@@ -246,9 +235,7 @@ const StoryContainer = forwardRef<StoryRef, StoryContainerProps>(
                 props?.footerStyle ?? {},
                 { opacity, bottom },
               ]}
-              onLayout={({ nativeEvent }) => {
-                setViewHeight(nativeEvent.layout.height);
-              }}
+              onLayout={() => {}}
               {...footerViewProps}>
               <>
                 {renderFooterComponent?.({
@@ -268,7 +255,7 @@ const StoryContainer = forwardRef<StoryRef, StoryContainerProps>(
       <SafeAreaView style={rootStyle}>
         <KeyboardAvoidingView
           style={containerStyle}
-          keyboardVerticalOffset={Metrics.keyboardVerticalOffset}
+          keyboardVerticalOffset={0}
           behavior={'padding'}>
           {props.visible && storyViewContent()}
         </KeyboardAvoidingView>

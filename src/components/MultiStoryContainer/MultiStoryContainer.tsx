@@ -12,6 +12,7 @@ import {
   GestureDetector,
   GestureHandlerRootView,
 } from 'react-native-gesture-handler';
+import { KeyboardProvider } from 'react-native-keyboard-controller';
 import Animated from 'react-native-reanimated';
 import { Metrics } from '../../theme';
 import { Footer } from '../Footer';
@@ -213,7 +214,8 @@ const MultiStoryContainer = forwardRef<ListItemRef, MultiStoryContainerProps>(
         visible={visible}
         transparent={true}
         onRequestClose={() => onComplete?.()}>
-        <GestureHandlerRootView style={styles.rootViewStyle}>
+        <KeyboardProvider>
+          <GestureHandlerRootView style={styles.rootViewStyle}>
           <GestureDetector gesture={gestureHandler}>
             <Animated.View
               style={[styles.mainFlashListContainer, animationModalStyle]}>
@@ -265,7 +267,8 @@ const MultiStoryContainer = forwardRef<ListItemRef, MultiStoryContainerProps>(
               />
             </Animated.View>
           </GestureDetector>
-        </GestureHandlerRootView>
+          </GestureHandlerRootView>
+        </KeyboardProvider>
       </Modal>
     );
   }
