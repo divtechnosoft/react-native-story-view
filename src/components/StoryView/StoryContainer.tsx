@@ -69,6 +69,7 @@ const StoryContainer = forwardRef<StoryRef, StoryContainerProps>(
       onVideoEnd,
       onArrowClick,
       onStoryPressHold,
+      onStoryPressRelease,
       isKeyboardVisible,
       setVideoDuration,
       setVisibleElements,
@@ -140,7 +141,8 @@ const StoryContainer = forwardRef<StoryRef, StoryContainerProps>(
                 onPress={(e: { nativeEvent: any }) =>
                   changeStory(e.nativeEvent)
                 }
-                onLongPress={onStoryPressHold}>
+                onLongPress={onStoryPressHold}
+                onPressOut={onStoryPressRelease}>
                 {props.stories?.[progressIndex]?.showOverlay && (
                   <View style={overlayViewStyles}>
                     {renderOverlayView &&
