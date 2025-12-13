@@ -48,7 +48,7 @@ const StoryView = (props: StoryViewProps) => {
         style={[
           {
             width: width,
-            height: width * (16 / 9),
+            height: Math.min(width * (16 / 9), height - 100),
           },
           styles.storyMedia,
         ]}>
@@ -64,7 +64,7 @@ const StoryView = (props: StoryViewProps) => {
             <>
               <Video
                 ref={videoRef}
-                resizeMode="contain"
+                resizeMode="cover"
                 muted={props.isMuted}
                 paused={props.pause || loading}
                 source={{

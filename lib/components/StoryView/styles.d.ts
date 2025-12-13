@@ -24,7 +24,7 @@ declare const styles: {
         width: string;
         height: string;
         backgroundColor: string;
-        resizeMode: "contain";
+        resizeMode: "cover";
         borderRadius: number;
     };
     imageOverlay: {
@@ -33,7 +33,7 @@ declare const styles: {
         right: number;
         bottom: number;
         top: number;
-        resizeMode: "contain";
+        resizeMode: "cover";
     };
     progressiveImageContainer: {
         backgroundColor: string;
