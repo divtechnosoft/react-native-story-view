@@ -4,6 +4,10 @@ declare const styles: {
         width: string;
         borderRadius: number;
     };
+    rootContainer: {
+        alignItems: "center";
+        marginRight: number;
+    };
     imageContainer: {
         height: number;
         width: number;
@@ -12,14 +16,11 @@ declare const styles: {
         borderRadius: number;
         borderColor: string;
         borderWidth: number;
-        marginRight: number;
     };
     viewedStoryContainer: {
         borderColor: string;
     };
     username: {
-        alignSelf: "center";
-        marginRight: number;
         marginTop: number;
         color: string;
         fontWeight: "500";

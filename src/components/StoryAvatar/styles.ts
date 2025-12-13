@@ -7,6 +7,10 @@ const styles = StyleSheet.create({
     width: '95%',
     borderRadius: moderateScale(35),
   },
+  rootContainer: {
+    alignItems: 'center',
+    marginRight: moderateScale(16),
+  },
   imageContainer: {
     height: moderateScale(70),
     width: moderateScale(70),
@@ -15,14 +19,11 @@ const styles = StyleSheet.create({
     borderRadius: moderateScale(35),
     borderColor: Colors.pink,
     borderWidth: 2,
-    marginRight: moderateScale(16),
   },
   viewedStoryContainer: {
     borderColor: Colors.inActiveColor,
   },
   username: {
-    alignSelf: 'center',
-    marginRight: moderateScale(16),
     marginTop: moderateScale(6),
     color: Colors.white,
     fontWeight: '500',

@@ -55,7 +55,7 @@ const StoryAvatar = forwardRef<View, StoryAvatarProps>(
       <Pressable
         onPress={gestureEvents => openStories?.(index, gestureEvents)}
         {...rootProps}>
-        <Animated.View ref={ref}>
+        <Animated.View ref={ref} style={styles.rootContainer}>
           <View style={_containerStyle}>
             <Animated.Image
               resizeMode="cover"
