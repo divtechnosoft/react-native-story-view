@@ -6,6 +6,7 @@ import { Metrics } from '../../theme';
 import ProgressiveImage from './ProgressiveImage';
 import styles from './styles';
 import { StoryViewProps, StroyTypes } from './types';
+import { moderateScale } from 'react-native-size-matters';
 
 const BUFFER_TIME = 1000 * 10;
 
@@ -48,7 +49,7 @@ const StoryView = (props: StoryViewProps) => {
         style={[
           {
             width: width,
-            height: Math.min(width * (16 / 9), height - 100),
+            height: Math.min(width * (16 / 9), height - moderateScale(115, 0.1)),
           },
           styles.storyMedia,
         ]}>
