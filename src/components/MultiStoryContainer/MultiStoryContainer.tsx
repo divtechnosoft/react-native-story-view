@@ -91,6 +91,7 @@ const MultiStoryListItem = forwardRef<ListItemRef, MultiStoryListItemProps>(
           {storyIndex === index || isTransitionActive ? (
             <StoryContainer
               visible={true}
+              enableInternalLongPress={false}
               extended={true}
               key={index + item?.id}
               ref={storyRef}

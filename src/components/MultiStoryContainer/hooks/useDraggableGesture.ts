@@ -48,7 +48,8 @@ const useDraggableGesture = ({
   };
 
   const panGesture = Gesture.Pan()
-    .activateAfterLongPress(200)
+    .activeOffsetY([-10, 10])
+    .failOffsetX([-10, 10])
     .enabled(!isScrollActive) // To disable the pan gesture while FlashList is scrolling
     .onChange(event => {
       if (event.velocityY === 0) return;

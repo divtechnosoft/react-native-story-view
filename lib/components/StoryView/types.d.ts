@@ -140,6 +140,7 @@ export interface StoryContainerBaseProps extends CommonProps {
     footerStyle?: ViewStyle;
     renderOverlayView?: (item: StoryType) => JSX.Element;
     overlayViewPostion?: 'top' | 'bottom' | 'middle';
+    enableInternalLongPress?: boolean;
 }
 export interface OverlayViewStoryContainerProps extends StoryContainerBaseProps {
     renderOverlayView: (item: StoryType) => JSX.Element;

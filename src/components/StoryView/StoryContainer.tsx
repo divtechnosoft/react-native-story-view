@@ -42,6 +42,7 @@ const StoryContainer = forwardRef<StoryRef, StoryContainerProps>(
       storyContainerViewProps,
       renderOverlayView,
       overlayViewPostion = OverlayPositions.Bottom,
+      enableInternalLongPress = true,
       ...props
     }: StoryContainerProps,
     ref
@@ -141,8 +142,12 @@ const StoryContainer = forwardRef<StoryRef, StoryContainerProps>(
                 onPress={(e: { nativeEvent: any }) =>
                   changeStory(e.nativeEvent)
                 }
-                onLongPress={onStoryPressHold}
-                onPressOut={onStoryPressRelease}>
+                onLongPress={
+                  enableInternalLongPress ? onStoryPressHold : undefined
+                }
+                onPressOut={
+                  enableInternalLongPress ? onStoryPressRelease : undefined
+                }>
                 {props.stories?.[progressIndex]?.showOverlay && (
                   <View style={overlayViewStyles}>
                     {renderOverlayView &&
