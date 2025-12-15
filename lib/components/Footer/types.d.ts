@@ -18,4 +18,5 @@ export declare type FooterProps = TextInputProps & {
     sendText?: string;
     onIconPress?: () => void | null;
     onSendTextPress?: () => void | null;
+    sectionStyle?: ViewStyle;
 };

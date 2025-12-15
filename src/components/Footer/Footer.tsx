@@ -30,6 +30,7 @@ const Footer = ({
   customInput,
   customSendButton,
   customInputSendButton,
+  sectionStyle,
   ...rest
 }: FooterProps) => {
   const isKeyboardVisible = useKeyboardListener();
@@ -47,10 +48,11 @@ const Footer = ({
     styles.container,
     containerStyle,
   ]);
+  const _sectionStyle = StyleSheet.flatten([styles.sectionStyle, sectionStyle]);
 
   return (
     <View style={_containerStyle} {...containerViewProps}>
-      <View style={styles.sectionStyle}>
+      <View style={_sectionStyle}>
         <>
           {customInput ?? (
             <TextInput
