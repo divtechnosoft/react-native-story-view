@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import {
   SafeAreaView,
+  StatusBar,
   StyleProp,
   TouchableOpacity,
   View,
@@ -260,6 +261,7 @@ const StoryContainer = forwardRef<StoryRef, StoryContainerProps>(
 
     return (
       <SafeAreaView style={rootStyle}>
+        <StatusBar barStyle="light-content" backgroundColor="black" />
         <KeyboardAvoidingView
           style={containerStyle}
           keyboardVerticalOffset={0}
