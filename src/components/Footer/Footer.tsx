@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Reanimated, { useAnimatedStyle, interpolateColor } from 'react-native-reanimated';
+import { useReanimatedKeyboardAnimation } from 'react-native-keyboard-controller';
 import { Icons } from '../../assets';
 import { Strings } from '../../constants';
 import { useKeyboardListener } from '../../hooks';
@@ -35,6 +37,7 @@ const Footer = ({
 }: FooterProps) => {
   const isKeyboardVisible = useKeyboardListener();
   const ref = useRef<TextInput>(null);
+  const { progress } = useReanimatedKeyboardAnimation();
 
   const handleSendTextPress = () => {
     ref?.current?.clear();
@@ -50,9 +53,19 @@ const Footer = ({
   ]);
   const _sectionStyle = StyleSheet.flatten([styles.sectionStyle, sectionStyle]);
 
+  const animatedSectionStyle = useAnimatedStyle(() => {
+    return {
+      borderColor: interpolateColor(
+        progress.value,
+        [0, 1],
+        [(_sectionStyle?.borderColor as string) || '#A1A1A1', Colors.white]
+      ),
+    };
+  });
+
   return (
     <View style={_containerStyle} {...containerViewProps}>
-      <View style={_sectionStyle}>
+      <Reanimated.View style={[_sectionStyle, animatedSectionStyle]}>
         <>
           {customInput ?? (
             <TextInput
@@ -73,7 +86,7 @@ const Footer = ({
             )}
           </TouchableOpacity>
         )}
-      </View>
+      </Reanimated.View>
       {!isKeyboardVisible && shouldShowSendImage && (
         <TouchableOpacity onPress={onIconPress} testID="footerIcon" style={{ marginLeft: 8 }}>
           {customSendButton ? (
