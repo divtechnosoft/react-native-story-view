@@ -43,6 +43,10 @@ const StoryAvatar = forwardRef<View, StoryAvatarProps>(
       containerStyle,
       (isUserStorySeen && viewedStoryContainerStyle) ??
         styles.viewedStoryContainer,
+      (!item?.stories || item?.stories?.length === 0) && {
+        borderWidth: 0,
+        borderColor: 'transparent',
+      },
     ]);
 
     const { avatarAnimatedStyle } = useCircleAnimation({
@@ -53,7 +57,17 @@ const StoryAvatar = forwardRef<View, StoryAvatarProps>(
 
     return (
       <Pressable
-        onPress={gestureEvents => openStories?.(index, gestureEvents)}
+        onPress={gestureEvents => {
+          if (
+            (item?.stories?.length === 0 || !item?.stories) &&
+            showAddButton &&
+            onAddButtonPress
+          ) {
+            onAddButtonPress();
+          } else {
+            openStories?.(index, gestureEvents);
+          }
+        }}
         {...rootProps}>
         <Animated.View ref={ref} style={styles.rootContainer}>
           <View style={_containerStyle}>
