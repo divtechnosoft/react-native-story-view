@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
 import { ActivityIndicator, useWindowDimensions, View } from 'react-native';
 import Video, { OnBufferData, OnLoadData } from 'react-native-video';
 // import convertToProxyURL from 'react-native-video-cache-control';
@@ -6,7 +8,8 @@ import { Metrics } from '../../theme';
 import ProgressiveImage from './ProgressiveImage';
 import styles from './styles';
 import { StoryViewProps, StroyTypes } from './types';
-import { moderateScale } from 'react-native-size-matters';
+import { moderateVerticalScale } from 'react-native-size-matters';
+
 
 const BUFFER_TIME = 1000 * 10;
 
@@ -42,6 +45,7 @@ const StoryView = (props: StoryViewProps) => {
   };
 
   const { height, width } = useWindowDimensions();
+  const insets = useSafeAreaInsets();
 
   return (
     <View style={[styles.divStory, { height, width }]} ref={props?.viewRef}>
@@ -49,7 +53,7 @@ const StoryView = (props: StoryViewProps) => {
         style={[
           {
             width: width,
-            height: Math.min(width * (16 / 9), height - moderateScale(115, 0.1)),
+            height: height - (insets.top + insets.bottom) - moderateVerticalScale(80),
           },
           styles.storyMedia,
         ]}>
