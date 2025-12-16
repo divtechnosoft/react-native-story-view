@@ -53,7 +53,7 @@ const StoryView = (props: StoryViewProps) => {
         style={[
           {
             width: width,
-            height: height - (insets.top + insets.bottom) - moderateVerticalScale(80),
+            height: height - (insets.top + insets.bottom) - moderateVerticalScale(75),
           },
           styles.storyMedia,
         ]}>
